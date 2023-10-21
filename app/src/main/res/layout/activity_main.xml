@@ -14,26 +14,42 @@
         android:layout_marginTop="7dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="@string/name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/idTelefone"
+        android:layout_width="390dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="76dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/telefone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/idSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="48dp"
-        android:text="Button"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idName" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRecycle"
-        android:layout_width="405dp"
-        android:layout_height="398dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="150dp"
+        android:layout_width="384dp"
+        android:layout_height="405dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idSalvar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.example.recycle;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.MeuViewHolder> {
-    private List dados;
+    private List<Pessoa> dados;
     public MeuAdapter(List dados) {
         this.dados=dados;
     }
@@ -18,12 +20,15 @@ public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.MeuViewHolder> {
     @NonNull
     @Override
     public MeuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.line_recycle,parent,false);
+        return new MeuViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MeuViewHolder holder, int position) {
-
+        holder.nome.setText(dados.get(position).nome);
+        holder.telefone.setText(dados.get(position).telefone);
     }
 
     @Override
@@ -34,10 +39,12 @@ public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.MeuViewHolder> {
     public class MeuViewHolder extends RecyclerView.ViewHolder{
         TextView nome;
         TextView telefone;
+        Button salvar;
         public MeuViewHolder(@NonNull View itemView) {
             super(itemView);
             nome = itemView.findViewById(R.id.idNomeL);
             telefone = itemView.findViewById(R.id.idTelefoneL);
+            salvar = itemView.findViewById(R.id.idSalvar);
         }
     }
 }
